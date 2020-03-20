@@ -1,15 +1,15 @@
 <template>
     <div>
-        <h1> My Shopping Cart</h1>
+        <h2> My Shopping Cart</h2>
         <div class="wrapper">
             <div class="products">
-                <div class="product" v-for="item in cart" :key="item[1].id">
-                    <div class="info">
-                        <h1>{{item[1].name}}</h1>
-                        <p>{{item[1].country}}</p>
-                    </div>
+                <div class="product" v-for="item in $root.$data.cart" :key="item[1].id">
+<!--                    <div class="info">-->
+<!--                        <h1>{{item[1].name}}</h1>-->
+<!--                        <p>{{item[1].artist}}</p>-->
+<!--                    </div>-->
                     <div class="image">
-                        <img :src="'/images/products/'+item[1].image">
+                        <img :src="require('../img/' + item[1].image)">
                     </div>
                     <div class="price">
                         <h2>{{item[1].price}} x {{item[2]}}</h2>
@@ -107,12 +107,13 @@
 
     .price {
         display: flex;
+        background: black;
     }
 
     button {
         height: 50px;
-        background: #000;
-        color: white;
+        text-align: center;
+        margin:auto;
         border: none;
     }
 
