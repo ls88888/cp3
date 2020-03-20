@@ -1,8 +1,19 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
+import mock from './mock-data.js'
+// import Cart from './components/ProductList.vue'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+
+let data = {
+  products: mock,
+  // cart: []
+};
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  data,
+  render: h => h(App)
+}).$mount('#app');
